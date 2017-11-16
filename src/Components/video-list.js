@@ -1,16 +1,16 @@
 import React from 'react';
 
-const VideoList = () => {
+import VideoListItem from './video-list-item';
+
+const VideoList = ({videos, onSelectVideo}) => {
+	const videoItems = videos.map((video) => {
+		return <VideoListItem onSelectVideo={onSelectVideo} key={video.etag} video={video} />
+	});
+
 	return (
-		<div className="col-md-4">
-			<ul className="list-group">
-				<li>List 1</li>
-				<li>List 1</li>
-				<li>List 1</li>
-				<li>List 1</li>
-				<li>List 1</li>
-			</ul>
-		</div>
+		<ul className="col-md-4 list-group">
+			{videoItems}
+		</ul>
 	)
 }
 
