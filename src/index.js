@@ -6,6 +6,7 @@ import { debounce } from 'lodash';
 import SearchBar from './Components/search_bar';
 import VideoList from './Components/video-list';
 import VideoDetail from './Components/video-details';
+import CopyRight from './Components/copyright';
 import registerServiceWorker from './Components/registerServiceWorker';
 
 //YouTube Search API
@@ -37,6 +38,7 @@ class App extends Component {
 				<SearchBar onSearchTermChange={onSearch} />
 				<VideoDetail video={this.state.selectecVideo}/>
 				<VideoList onSelectVideo={selectecVideo=>this.setState({selectecVideo})} videos={this.state.videos} />
+				<CopyRight />
 			</div>	
 		)
 	}
